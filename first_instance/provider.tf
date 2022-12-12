@@ -1,6 +1,10 @@
+variable "path" { 
+    default = "/home/udemy/terraform/credentials"
+}
+
 provider "google"{
-    project = "learning-terrafrom-2022"
+    project = "iac-terraform-2022"
     region = "us-central1"
-    credentials = ""
+    credentials = "${file("${var.path}/secrets.json")}"
 
 }
